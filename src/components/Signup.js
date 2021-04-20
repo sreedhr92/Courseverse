@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 const Signup = () => {
   return ( 
     <div className="app_1">
@@ -24,7 +25,7 @@ const Signup = () => {
 		</form>
 
 		<footer className="login_footer">
-			<button className="register">Register</button>
+			<button className="register"><a href="/detailsurl">Register</a></button>
 			<p>Already have an account? <a href="/loginurl">Login</a></p>
 		</footer>
 

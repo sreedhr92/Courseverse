@@ -16,6 +16,7 @@ code {
 	}
 	h3{
 		color: rgb(34, 26, 26);
+    font-family: 'Poppins', sans-serif;
 	}
 	body{
 	  margin: 0;
@@ -67,7 +68,7 @@ code {
 
 	.bg {
 		width: 400px;
-		height: 550px;
+		height: 580px;
 		background: #257aa6;
 		position: absolute;
 		top: -5em;
@@ -136,9 +137,20 @@ code {
 	    font-family: 'Poppins', sans-serif;
 	    outline: none;
 	    color: #fff;
+      cursor: pointer;
 	}
 	
-
+   button.register a{
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 100px;
+    border: none;
+    background: #257aa6;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+   }
 
     * {
       font-family: sans-serif;
@@ -274,4 +286,43 @@ code {
 .topnav a.active {
   background-color: #3810eb;
   color: white;
+}
+select {
+  width: 100%;
+	    padding: 13px 15px;
+	    margin: 0.7em auto;
+	    border-radius: 100px;
+	    border: none;
+	    background: rgb(255,255,255,0.3);
+	    font-family: 'Poppins', sans-serif;
+	    outline: none;
+	    color: #fff;
+}
+.app_2 {
+  background-color:#fff;
+  width: 380px;
+  height: 520px;
+  margin: 2em auto;
+  border-radius: 30px;
+  padding: 1em;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 31px -2px rgba(0, 0, 0, .3);
+}
+.bg_2 {
+  width: 385px;
+  height: 500px;
+  background: #257aa6;
+  position: absolute;
+  top: -5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-blue-creative-gradient-decoration-image_11175.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-clip-path: ellipse(95% 49% at 48% 46%);
+clip-path: ellipse(95% 49% at 48% 46%);
+  
 }
