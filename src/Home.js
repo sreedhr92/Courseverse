@@ -14,7 +14,7 @@ const Home = () => {
 
       <div class="lp__text">
         <h1 class="lp__text__title"><span class="lp__text__title-first">An E-learning platform for the students</span>
-          Designers</h1>
+          </h1>
         <p class="lp__text__subtext">Upgrade your skills with absolute fun.</p>
       </div>
   
