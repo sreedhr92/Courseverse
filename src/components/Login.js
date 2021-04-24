@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from "axios";
+
 const Login = () => {
   return (
     <div className="app">
@@ -20,7 +22,7 @@ const Login = () => {
 		</form>
 
 		<footer className="login_footer">
-			<button className="register"><a href="/homeurl">Continue</a></button>
+			<button className="register">Continue</button>
 			<p>Don't have an account? <a href="/signupurl">Sign Up</a></p>
 		</footer>
 
@@ -28,5 +30,7 @@ const Login = () => {
 	</div>
    );
 }
+
+
  
 export default Login;

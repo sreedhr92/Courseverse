@@ -3,20 +3,25 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Details from './components/Details';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Link, Redirect} from 'react-router-dom';
+import Faculty from './components/Faculty';
+import Student from './components/Student';
+import {BrowserRouter as Router} from 'react-router-dom'
 
 
 const App = () => {
   return ( <div>
     <div class="topnav">
-  <a href="/homeurl">Home</a>
-  <a href="/loginurl">Login</a>
-  <a href="/signupurl">Signup</a>
-  <a href="/detailsurl">About</a>
-  </div>
-    <br />
+  <Link to="/homeurl">Home</Link>
+  <Link to="/loginurl">Login</Link>
+  <Link to="/signupurl">Signup</Link>
+  <Link to="/detailsurl">About</Link>
+  <Link to="/studenturl">Student</Link>
+  <Link to="/facultyurl">Faculty</Link>
+  <Link to="#">Logout</Link>
+  </div><br /><br />
     <Switch>
-      <Route path="/homeurl">
+    <Route path="/homeurl">
         <Home />
       </Route>
       <Route path="/loginurl">
@@ -28,7 +33,18 @@ const App = () => {
       <Route path="/detailsurl">
         <Details />
       </Route>
+      <Route path="/facultyurl">
+        <Router>
+            <Faculty />
+        </Router>
+      </Route>
+      <Route path="/studenturl">
+        <Router>
+        <Student />
+        </Router>
+      </Route>
     </Switch>
+    <Redirect to="/homeurl" />
      </div>);
 }
  
