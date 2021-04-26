@@ -11,14 +11,14 @@ const Signup = () => {
         <input className="login_input" type="text" name="" placeholder="Skills"/>
         <br/>
         <select>
-            <option value="" selected disabled hidden>Choose your subscription type here</option>
+            <option value="" selected disabled hidden>Subscription type</option>
             <option>Free</option>
             <option>VIP</option>
             <option>Premium</option>
         </select>
         <br/>
         <select>
-            <option value="" selected disabled hidden>Choose your Education status here</option>
+            <option value="" selected disabled hidden>Education status</option>
             <option>General</option>
             <option>Faculty</option>
             <option>High School</option>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Switch, Route, Link, Redirect} from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Enroll from './Enroll';
 const Student = () => {
@@ -17,6 +17,7 @@ const Student = () => {
         <Dashboard />
     </Route>
   </Switch>
+  <Redirect to="/enrollurl" />
     </div> );
 }
  

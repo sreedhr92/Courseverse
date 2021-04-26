@@ -288,17 +288,6 @@ code {
   background-color: #3810eb;
   color: white;
 }
-select {
-  width: 100%;
-	    padding: 13px 15px;
-	    margin: 0.7em auto;
-	    border-radius: 100px;
-	    border: none;
-	    background: rgb(255,255,255,0.3);
-	    font-family: 'Poppins', sans-serif;
-	    outline: none;
-	    color: #fff;
-}
 .app_2 {
   background-color:#fff;
   width: 380px;
@@ -328,6 +317,7 @@ clip-path: ellipse(95% 49% at 48% 46%);
   
 }
 .lp_bg {
+  font-family: 'Poppins', sans-serif;
   background: #fff;
   box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.4);
   max-width: 1300px;
@@ -401,4 +391,66 @@ clip-path: ellipse(95% 49% at 48% 46%);
 .nav_in_2 a.active {
   background-color: #3810eb;
   color: white;
+}
+.app_3 {
+  background-color:#fff;
+  width: 500px;
+  height: 460px;
+  border-radius: 30px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 6px 31px -2px rgba(0, 0, 0, .3);
+}
+.bg_3 {
+  width: 500px;
+  height: 550px;
+  background: #257aa6;
+  position: absolute;
+  top: -3em;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;  
+}
+
+button.register_1 a{
+  width: 60px;
+  padding: 13px 15px;
+  border-radius: 100px;
+  border: none;
+  background: #257aa6;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+ }
+
+ button.register_1 {
+  width: 300px;
+    padding: 13px 15px;
+    border-radius: 100px;
+    border: none;
+    background: #257aa6;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+select {
+  width: 100%;
+	    padding: 13px 15px;
+	    margin: 0.7em auto;
+	    border-radius: 100px;
+	    border: none;
+	    background: rgb(255,255,255,0.3);
+	    font-family: 'Poppins', sans-serif;
+	    outline: none;
+	    color: #fff;
+}
+.flex{
+  display: inline-flex;
+  flex-direction: row;
 }

@@ -44,7 +44,6 @@ const App = () => {
         </Router>
       </Route>
     </Switch>
-    <Redirect to="/homeurl" />
      </div>);
 }
  

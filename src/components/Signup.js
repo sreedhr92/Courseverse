@@ -1,4 +1,5 @@
-import React from 'react';
+import React ,{useState} from 'react';
+
 const Signup = () => {
   return ( 
     <div className="app_1">
@@ -6,7 +7,7 @@ const Signup = () => {
 		<div className="bg_1"></div>
 
 		<form >
-        <h3 className="header_1">Create your Couserverse Account</h3>
+        <h3 className="header_1">Create your Courseverse Account</h3>
 				<input className="login_input" type="text" name="" placeholder="Name"/>
         <input className="login_input" type="text" name="" placeholder="Username"/>
         <input className="login_input" type="text" name="" placeholder="Email"/>
