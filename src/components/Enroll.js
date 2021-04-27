@@ -87,7 +87,7 @@ const Enroll = () => {
                                 {content.prerequisites}
                             </td>
                             <td>
-                                <button value={content.id} onClick={(e)=>{handleClick(e)}} className="button">Enroll</button>
+                                <button style={{borderRadius:'19px'}} value={content.id} onClick={(e)=>{handleClick(e)}} className="button">Enroll</button>
                             </td>
                         </tr>
                         );
