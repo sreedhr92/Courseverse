@@ -13,17 +13,6 @@ const AddCourse = () => {
     const [preq,setPreq] = useState('');
     const [complexity,setComplexity] = useState('');
 
-
-    const getStatement = async () => {
-        const res = await axios.get("http://localhost:5000/addcourse");
-        console.log("Results:");
-        console.log(res.data);
-        if(res.data.affectedRows ===1)
-         {
-        alert("Course Uploaded Successfully!")
-        }
-    };
-
     const handleClick = (e) => {
         e.preventDefault();
         let data = {
@@ -43,12 +32,18 @@ const AddCourse = () => {
             data: data,
             })
     
-            .then()
+            .then(res=>{
+                console.log("Results:");
+                console.log(res.data);
+                if(res.data.affectedRows ===1)
+                {
+                alert("Course Uploaded Successfully!")
+                }
+            })
             .catch((err) => {
             console.log(err);
             });
             console.log("Dates posted to /addcourse")
-            getStatement();
             
     }
     return (<div>&emsp;

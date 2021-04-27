@@ -5,16 +5,6 @@ const Details = () => {
     const [interest,setInterest] = useState('');
     const [skills,setSkills] = useState('');
     const [sub_stat,setSub_type] = useState('Subscription type');
-    const getStatement = async () => {
-          const res = await axios.get("http://localhost:5000/details");
-          console.log("Results:");
-          console.log(res.data);
-            if(res.data.affectedRows ===1)
-            {
-                alert("Please Wait ! Personalizing your pages");
-                window.location.href="/homeurl";
-            }
-        };
       const handleClick = (e) => {
           e.preventDefault();
           let data = {
@@ -29,13 +19,20 @@ const Details = () => {
                 data: data,
               })
         
-              .then()
+              .then(res=>{
+                console.log("Results:");
+                console.log(res.data);
+                  if(res.data.affectedRows ===1)
+                  {
+                      alert("Please Wait ! Personalizing your pages");
+                      window.location.href="/homeurl";
+                  }
+              }
+              )
               .catch((err) => {
                 console.log(err);
               });
-              console.log("Dates posted to /details")
-            getStatement();           
-              
+              console.log("Dates posted to /details")               
       }
   return ( 
     <div className="app_2">

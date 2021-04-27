@@ -4,26 +4,6 @@ import axios from "axios";
 const Login = () => {
 	const [username, setUser] = useState('');
 	const [password, setPass] = useState('');
-	const getStatement = async () => {
-		const res = await axios.get("http://localhost:5000/login");
-		console.log("Results:");
-		console.log(res.data);
-		console.log("length",res.data.length);
-		if (res.data.length === 1)
-		{
-			alert("Successfully logged in");
-			if(res.data[0].type ==='student')
-				window.location.href="/studenturl";
-			else
-				window.location.href="/facultyurl";
-		}
-		else
-		{
-			alert("Invalid user id or password");
-			return;
-		}
-
-	  };
 	const handleClick = (e) => {
 		if(username.length===0 || password.length===0)
 			return;
@@ -38,13 +18,28 @@ const Login = () => {
 			  data: data,
 			})
 	  
-			.then()
+			.then(res=>{
+				console.log("Results:");
+				console.log(res.data.length);
+				if (res.data.length === 1)
+				{
+					alert("Successfully logged in");
+					if(res.data[0].type ==='student')
+						window.location.href="/studenturl";
+					else
+						window.location.href="/facultyurl";
+				}
+				else
+				{
+					alert("Invalid user id or password");
+					return;
+				}
+			}
+			)
 			.catch((err) => {
 			  console.log(err);
 			});
-			console.log("Dates posted to /login")
-		  getStatement();
-			
+			console.log("Dates posted to /login")			
 	}
   return (
     <div className="app">

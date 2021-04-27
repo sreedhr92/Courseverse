@@ -9,21 +9,6 @@ const Signup = () => {
   const [pass,setPass] = useState('');
   const [date,setDate] = useState('');
   const [type,setType] = useState('');
-
-
-  const getStatement = async () => {
-		const res = await axios.get("http://localhost:5000/signup");
-		console.log("Results:");
-		console.log(res.data);
-    console.log(res.data.affectedRows);
-    if(res.data.affectedRows ===1)
-    {
-      alert("Account Created Successfully!");
-      window.location.href="/detailsurl";
-    }
-
-  }
-
 	const handleClick = (e) => {
     if(user_id.length===0 || pass.length===0)
 			return;
@@ -44,12 +29,23 @@ const Signup = () => {
 			  data: data,
 			})
 	  
-			.then()
+			.then(res=>{
+        console.log("Results:");
+        console.log(res.data);
+        console.log(res.data.affectedRows);
+        if(res.data.affectedRows ===1)
+        {
+          alert("Account Created Successfully!");
+          window.location.href="/detailsurl";
+        }
+      }
+
+      )
 			.catch((err) => {
 			  console.log(err);
 			});
 			console.log("Dates posted to /signup")
-		  getStatement();
+
 	}
   return ( 
     <div className="app_1">

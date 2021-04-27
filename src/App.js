@@ -3,7 +3,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Details from './components/Details';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Switch, Route, NavLink} from 'react-router-dom';
 import Faculty from './components/Faculty';
 import Student from './components/Student';
 import {BrowserRouter as Router} from 'react-router-dom'
@@ -12,13 +12,13 @@ import {BrowserRouter as Router} from 'react-router-dom'
 const App = () => {
   return ( <div>
     <div className="topnav">
-  <Link to="/homeurl">Home</Link>
-  <Link to="/loginurl">Login</Link>
-  <Link to="/signupurl">Signup</Link>
-  <Link to="/detailsurl">About</Link>
-  <Link to="/studenturl">Student</Link>
-  <Link to="/facultyurl">Faculty</Link>
-  <Link to="#">Logout</Link>
+  <NavLink to="/homeurl">Home</NavLink>
+  <NavLink to="/loginurl">Login</NavLink>
+  <NavLink to="/signupurl">Signup</NavLink>
+  {/*<NavLink to="/detailsurl">About</NavLink>
+  <NavLink to="/studenturl">Student</NavLink>
+  <NavLink to="/facultyurl">Faculty</NavLink>*/}
+  <NavLink to="/logout">Logout</NavLink>
   </div><br /><br />
     <Switch>
     <Route path="/homeurl">

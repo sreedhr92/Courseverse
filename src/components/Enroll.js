@@ -3,14 +3,41 @@ import axios from 'axios';
 import uuid from 'react-uuid'
 const Enroll = () => {
     const [data, setData] = useState([]);
+    const [id, setId]= useState('');
     const getStatement = async () => {
-        const res = await axios.get("http://localhost:5000/getcourse");
+        const res = await axios.post("http://localhost:5000/getcourse");
         console.log("Results:");
         console.log(res.data);
         if(res.data.length >0)
          {
             setData(res.data);
          }
+    }
+    const handleClick = (e) => {
+        setId(e.target.value);
+        e.preventDefault();
+        let data_1 = {
+            id:id
+        };
+        console.log("posting:", data_1);
+        axios
+            .post("http://localhost:5000/enrollcourse", {
+            data: data_1,
+            })
+    
+            .then(res=>{
+                console.log("Results:");
+                console.log(res.data);
+                if(res.data.affectedRows ===1)
+                 {
+                    alert("Course enrolled Successfully!")
+                }
+            })
+            .catch((err) => {
+            console.log(err);
+            });
+            console.log("Dates posted to /enrollcourse")
+            
     }
     useEffect( ()=>{
         getStatement();
@@ -23,11 +50,11 @@ const Enroll = () => {
                     <th>Course Name</th>
                     <th>Faculty Name</th>
                     <th>Description</th>
-                    <th>Prerequisites</th>
+                    <th>Complexity</th>
                     <th>Area</th>
                     <th>Estimated Time</th>
                     <th>Price</th>
-                    <th>Complexity</th>
+                    <th>Prerequisites</th>
                     <th>Enrollment</th>
                 </tr>
             </thead>
@@ -45,7 +72,7 @@ const Enroll = () => {
                                 {content.description}
                             </td>
                             <td>
-                                {content.preq}
+                               <div className="div1" style={{color:'white',borderRadius:'8px',padding:'3px',backgroundColor:content.complexity==='Beginner'? '#289672' :content.complexity==='Intermediate'?'#fa9905':'#810000'}}>{content.complexity}</div>
                             </td>
                             <td>
                                 {content.area}
@@ -57,10 +84,10 @@ const Enroll = () => {
                                 {content.price}
                             </td>
                             <td>
-                                {content.complexity}
+                                {content.prerequisites}
                             </td>
                             <td>
-                                <button className="button">Enroll</button>
+                                <button value={content.id} onClick={(e)=>{handleClick(e)}} className="button">Enroll</button>
                             </td>
                         </tr>
                         );
@@ -70,5 +97,4 @@ const Enroll = () => {
         </table>
     </div>  );
 }
- 
 export default Enroll;
