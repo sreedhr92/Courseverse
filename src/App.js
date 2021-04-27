@@ -3,7 +3,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Details from './components/Details';
-import {Switch, Route, Link, Redirect} from 'react-router-dom';
+import {Switch, Route, Link} from 'react-router-dom';
 import Faculty from './components/Faculty';
 import Student from './components/Student';
 import {BrowserRouter as Router} from 'react-router-dom'
@@ -11,7 +11,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 const App = () => {
   return ( <div>
-    <div class="topnav">
+    <div className="topnav">
   <Link to="/homeurl">Home</Link>
   <Link to="/loginurl">Login</Link>
   <Link to="/signupurl">Signup</Link>

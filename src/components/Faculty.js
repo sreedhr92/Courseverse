@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Switch, Route, Link,Redirect} from 'react-router-dom';
 import AddCourse from './AddCoure';
 import Dashboard from './Dashboard';
 import Enroll from './Enroll';
 const Faculty = () => {
     return ( <div className="lp_bg">
-        <div class="nav_in_2">
+        <div className="nav_in_2">
         <Link to="/enrollurl">Explore</Link>
   <Link to="/dashboardurl">Dashboard</Link>
   <Link to="/addurl">Add Course</Link>

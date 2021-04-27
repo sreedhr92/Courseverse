@@ -357,7 +357,7 @@ clip-path: ellipse(95% 49% at 48% 46%);
 }
 
 .box_1 {
-  background: rgb(189, 209, 207);
+  background: rgb(231, 236, 236);
   box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.4);
   max-width: 1260px;
   border-radius: 10px;
@@ -453,4 +453,51 @@ select {
 .flex{
   display: inline-flex;
   flex-direction: row;
+}
+.styled-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #ceaa34;
+  color: #f3ecec;
+  text-align: left;
+  border-radius: 15px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr:hover {
+  font-weight: bold;
+  color: #009879;
+}
+.button {
+  background-color: #008CBA; /* #555555 */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }

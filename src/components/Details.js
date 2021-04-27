@@ -1,5 +1,42 @@
-import React from 'react';
-const Signup = () => {
+import React, { useState } from 'react';
+import axios from "axios";
+const Details = () => {
+    const [e_stat ,setE_type] = useState('');
+    const [interest,setInterest] = useState('');
+    const [skills,setSkills] = useState('');
+    const [sub_stat,setSub_type] = useState('Subscription type');
+    const getStatement = async () => {
+          const res = await axios.get("http://localhost:5000/details");
+          console.log("Results:");
+          console.log(res.data);
+            if(res.data.affectedRows ===1)
+            {
+                alert("Please Wait ! Personalizing your pages");
+                window.location.href="/homeurl";
+            }
+        };
+      const handleClick = (e) => {
+          e.preventDefault();
+          let data = {
+              e_stat:e_stat,
+              interest:interest,
+              skills:skills,
+              sub_stat:sub_stat  
+            };
+            console.log("posting:", data);
+            axios
+              .post("http://localhost:5000/details", {
+                data: data,
+              })
+        
+              .then()
+              .catch((err) => {
+                console.log(err);
+              });
+              console.log("Dates posted to /details")
+            getStatement();           
+              
+      }
   return ( 
     <div className="app_2">
 
@@ -7,33 +44,33 @@ const Signup = () => {
 
 		<form >
         <h3 className="header_1">Just a few more steps to go Customizing your pages</h3><br />
-		<input className="login_input" type="text" name="" placeholder="Area of interest"/>
-        <input className="login_input" type="text" name="" placeholder="Skills"/>
+		<input value={interest} onChange={(e)=> setInterest(e.target.value)} className="login_input" type="text" name="" placeholder="Area of interest"/>
+        <input value={skills} onChange={(e)=> setSkills(e.target.value)} className="login_input" type="text" name="" placeholder="Skills"/>
         <br/>
-        <select>
-            <option value="" selected disabled hidden>Subscription type</option>
-            <option>Free</option>
-            <option>VIP</option>
-            <option>Premium</option>
+        <select defaultValue={'DEFAULT'} onChange={(e)=> setSub_type(e.target.value)}>
+            <option value="DEFAULT" disabled>Subscription type</option>
+            <option value="Free">Free</option>
+            <option value="VIP">VIP</option>
+            <option value="Premium">Premium</option>
         </select>
         <br/>
-        <select>
-            <option value="" selected disabled hidden>Education status</option>
-            <option>General</option>
-            <option>Faculty</option>
-            <option>High School</option>
-            <option>Under Graduate</option>
-            <option>Post Graduate</option>
+        <select defaultValue={'DEFAULT'} onChange={(e)=> setE_type(e.target.value)}>
+            <option value="DEFAULT" disabled>Education status</option>
+            <option value="General">General</option>
+            <option value="Faculty">Faculty</option>
+            <option value="High School">High School</option>
+            <option value="Under Graduate">Under Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
         </select>
         <br/><br/>             
 
 		</form>
 
 		<footer className="login_footer">
-			<button className="register">Setup my Account</button>
+			<button onClick={handleClick} className="register">Setup my Account</button>
 		</footer>
 	</div>
  );
 }
  
-export default Signup;
+export default Details;

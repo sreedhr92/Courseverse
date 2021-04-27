@@ -4,26 +4,29 @@ import axios from "axios";
 const Login = () => {
 	const [username, setUser] = useState('');
 	const [password, setPass] = useState('');
-	const [valid, setValid] = useState(0);
-	const [type, setType] = useState(0);
 	const getStatement = async () => {
 		const res = await axios.get("http://localhost:5000/login");
 		console.log("Results:");
 		console.log(res.data);
 		console.log("length",res.data.length);
-		console.log("Type",res.data[0].type)
-		setValid(res.data.length);
-		console.log(valid);
-		if (valid === 1)
+		if (res.data.length === 1)
+		{
 			alert("Successfully logged in");
+			if(res.data[0].type ==='student')
+				window.location.href="/studenturl";
+			else
+				window.location.href="/facultyurl";
+		}
 		else
+		{
 			alert("Invalid user id or password");
-		if( res.data[0].type === "student" )
-			setType(1);
-		else
-			setType(0);
+			return;
+		}
+
 	  };
 	const handleClick = (e) => {
+		if(username.length===0 || password.length===0)
+			return;
 		e.preventDefault();
 		let data = {
 			user_id: username,
@@ -41,10 +44,6 @@ const Login = () => {
 			});
 			console.log("Dates posted to /login")
 		  getStatement();
-		  if(valid === 1 && type === 1)
-			window.location.href="/studenturl";
-		  else if(valid === 1 && type === 0)
-			window.location.href="/facultyurl";
 			
 	}
   return (
@@ -55,13 +54,12 @@ const Login = () => {
 		<form >
 		<h3 className="header_1">Welcome to Courseverse</h3><br />
 			<header className="img">
-				<img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/reading_0re1.svg" />
+				<img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/reading_0re1.svg" alt ="pic"/>
 			</header>
 
 				<input className="login_input" value ={username} type="text" name="" placeholder="username or email" onChange={(e)=> setUser(e.target.value)}/>
 				<input className="login_input" value ={password} type="password" name="" placeholder="password" onChange={(e)=> setPass(e.target.value)}/>
-
-				<p className="light"><a href="#">Forgot password?</a></p>
+				<p className="light"><a href="/">Forgot password?</a></p>
 		
 
 		</form>
