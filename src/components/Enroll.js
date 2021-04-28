@@ -44,6 +44,7 @@ const Enroll = () => {
     },[])
     return (<div className="box_1"><br/>
         <center><h3>Explore and Enroll into your favourite courses</h3></center><br/>
+        <div className="scroll">
         <table className="styled-table">
             <thead>
                 <tr>
@@ -95,6 +96,7 @@ const Enroll = () => {
                 }
             </tbody>
         </table>
+        </div>
     </div>  );
 }
 export default Enroll;

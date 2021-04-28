@@ -23,12 +23,13 @@ code {
 	  padding: 0;
 	  background: #0b1f30;
 	  font-family: 'Poppins', sans-serif;
-	  height: 110vh;
+	  height: 100vh;
     margin: auto;
 	  align-items: center;
 	  display: -webkit-box;
 	  display: -ms-flexbox;
 	  justify-content: center;
+    overflow: auto;
 	}
 
 	img {
@@ -324,6 +325,7 @@ clip-path: ellipse(95% 49% at 48% 46%);
   height: 695px;
   margin: auto;
   padding:15px;
+  overflow: auto;
 }
 
 .nav_in {
@@ -452,6 +454,7 @@ select {
 .flex{
   display: inline-flex;
   flex-direction: row;
+  overflow: auto;
 }
 .styled-table {
   border-collapse: collapse;
@@ -503,4 +506,9 @@ select {
 .div1{
   text-align: center;
   align-items: center;
+}
+
+.scroll{
+  height: 530px;
+  overflow: auto;
 }

@@ -47,6 +47,7 @@ const Dashboard = () => {
     },[id])
     return (<div className="box_1"><br/>
         <center><h3>Hello ! This is your Personal Area</h3></center><br/>
+        <div className="scroll">
         <table className="styled-table">
             <thead>
                 <tr>
@@ -82,6 +83,7 @@ const Dashboard = () => {
                 }
             </tbody>
         </table>
+        </div>
     </div>  );
 }
  

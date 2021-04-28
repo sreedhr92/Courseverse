@@ -70,7 +70,7 @@ const Signup = () => {
 		<footer className="login_footer">
 			<button className="register" onClick={handleClick}>Register</button>
 			<p>Already have an account? <a href="/loginurl">Login</a></p>
-		</footer>
+		</footer> <br/>
 
 
 	</div>

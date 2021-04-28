@@ -18,7 +18,7 @@ const App = () => {
   {/*<NavLink to="/detailsurl">About</NavLink>
   <NavLink to="/studenturl">Student</NavLink>
   <NavLink to="/facultyurl">Faculty</NavLink>*/}
-  <NavLink to="/logout">Logout</NavLink>
+  <NavLink to="/logouturl">Logout</NavLink>
   </div><br /><br />
     <Switch>
     <Route path="/homeurl">
@@ -32,6 +32,9 @@ const App = () => {
       </Route>
       <Route path="/detailsurl">
         <Details />
+      </Route>
+      <Route path="/logouturl">
+        <Home />
       </Route>
       <Route path="/facultyurl">
         <Router>
