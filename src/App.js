@@ -43,7 +43,7 @@ const App = () => {
       </Route>
       <Route path="/studenturl">
         <Router>
-        <Student />
+            <Student />
         </Router>
       </Route>
     </Switch>
