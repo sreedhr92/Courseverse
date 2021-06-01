@@ -17,7 +17,7 @@ const Enroll = () => {
         setId(e.target.value);
         e.preventDefault();
         let data_1 = {
-            id:id
+            id:e.target.value
         };
         console.log("posting:", data_1);
         axios
@@ -41,7 +41,7 @@ const Enroll = () => {
     }
     useEffect( ()=>{
         getStatement();
-    },[])
+    },[id])
     return (<div className="box_1"><br/>
         <center><h3>Explore and Enroll into your favourite courses</h3></center><br/>
         <div className="scroll">

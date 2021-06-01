@@ -19,7 +19,7 @@ const Dashboard = () => {
         setTemp(temp);
         e.preventDefault();
         let data_1 = {
-            id:id
+            id:e.target.value
         };
         console.log("posting:", data_1);
         axios
